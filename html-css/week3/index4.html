@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Step 4</title>
+</head>
+<body>
+    <div id="navigation-bar">
+        <div id="logo">Logo</div>
+        <div id="navigation">Navigation</div>
+    </div>
+        <div id="firstdiv">
+            <h1>Signup to yourcustomtailer.com</h1>                
+        </div>
+        <div id="step-one">
+            <h2>Step 4/4 - Payment</h2>
+        </div>
+        <div id="progress-bar"><label>Progress</label>
+            <progress id="progress" value = "90" max = "100"/></div> 
+            <p>Please fill in your payment data:</p>
+        </div>
+    <fieldset>
+    <form>                         
+        <div>
+            <label>Name on card</label>       
+            <input type="text" name="firstname" value="" placeholder="name on card" required>            
+        </div> 
+        <div><label>Card type</label>
+            <select id="card-select">            
+            <option value="">--choose card type--</option>
+            <option value="">dancard</option>
+            <option value="">mastercard</option>
+            <option value="">visacard</option> 
+            </select>            
+        </div>  
+        <div> 
+            <label for="credit-card">Credit card number</label>        
+            <input type="text" name="lastname" value="" placeholder="your card number">
+            <label>Name on card</label>       
+            <input type="text" name="firstname" value="" placeholder="first name"> 
+        </div>
+        <div> 
+            <label>Expiry month</label>        
+            <input class="input-width" type="text" id="expiry-month" placeholder="mm" required>
+            <label>Expiry year</label>       
+            <input class="input-width" type="text" id="expiry-year" placeholder="yyyy" required> 
+        </div>
+        <div> 
+            <label>CCV</label>        
+            <input class="input-width" type="text" id="ccv-number" placeholder="cvv"f value="" required>                     
+        </div>
+    <div>
+        <a href="index4.html"><input id="next-button" type="next" value="Next step"></a>
+    </div>
+    <div>
+        <a href="index3.html"><input id="back-button" type="previous" value="Back"></a>
+    </div>
+    </form>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,70 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    }
+@media all and (max-width: 699px) and (min-width: 520px), (min-width: 1151px) {
+    body {
+        background: rgb(247, 243, 243);
+    }
+    }
+#header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(223, 214, 203);
+    }
+#nav-bar ul li {
+    list-style-type: none;
+    float: left;
+    padding: 10px;
+    margin-left: 50px;
+    }
+#nav-bar ul {
+    background-color: none;
+    padding: 30px;    
+    }
+.column {
+   float: left;
+   width: 50%;
+    }
+
+#main-section {    
+    max-width: 1200px; 
+    margin: 0 auto;
+    flex-grow: 1;  
+    box-sizing: border-box;
+    padding:  10px; 
+    }
+#content-section {
+    display: flex;
+    }
+#logo-section {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    line-height: 6em;   
+}
+footer {    
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: space-around; 
+    font-family: monospace;
+    font-size: 18px;
+    padding: 40px;
+    }
+#home p:nth-child(n+2), #archives p:nth-child(n+2) {
+    border-bottom: 0.1px rgb(42, 100, 122) solid;
+    }
+.content {
+    padding: 20px 50px;
+    }
+.headings {
+    font-size: 24px;
+    padding: 20px 50px;
+    }
+.heading-content {
+    padding: 20px 50px;
+    }
+.opening-hours {
+    padding: 20px 50px;
+    }

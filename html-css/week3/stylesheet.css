@@ -1,0 +1,171 @@
+
+body {
+    margin: 10px;
+    } 
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    font-family: sans-serif;
+    }
+html {
+    display: block;
+    }
+div {
+    display: block;
+    }
+#navigation-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;   
+    } 
+#logo {   
+    padding: 25px;    
+    background-color: rgb(16, 71, 25);
+    color: white;
+    margin-bottom: 50px;  
+    }
+#navigation {    
+    background-color: rgb(16, 71, 25);
+    color: white;
+    padding: 25px;
+    width: 400px;
+    text-align: center;
+    margin-bottom: 50px;
+    } 
+progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 3em;
+    
+    }
+progress[value]::-webkit-progress-bar {
+    border-radius: 50px; 
+    }
+progress[value]::-webkit-progress-value {
+    border-radius: 50px;
+    transition: 10;
+    }
+progress {
+    -webkit-writing-mode: horizontal-tb !important;
+    display: inline-block;
+    vertical-align: -0.2em;
+    }
+h1, h2, p, progress {
+    color: rgb(34, 14, 14);
+    margin-bottom: 10px;
+    } 
+fieldset {
+    display: block;
+    margin: 20px;
+    border-radius: 5px;
+    }
+form {
+    margin: 0 auto; 
+    padding: 4em; 
+    display: block;      
+    }
+form div + div {
+    margin-top: 2em;     
+  }  
+.profile-description {    
+    vertical-align: top;
+    height: 10em;     
+    }
+input, textarea {
+    font: 1em sans-serif;
+    padding: 10px;    
+    width: 300px;
+    box-sizing: border-box;  
+    }
+label {
+      display: inline-block;
+      font-weight: 800px;
+      width: 10em;
+      cursor: pointer;
+      padding: 8px;
+      margin-right: -0.9em;
+    }  
+label.profile-description {
+      margin-bottom: 25px;
+    }
+  #country-select {
+      padding: 12px;
+      width: 300px;      
+    } 
+ #shipping-address {
+    width: 45px;
+    height: 30px;    
+    vertical-align: -70%;    
+    }
+p {
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-block-start: 1.5em;
+    margin-block-end: 1.5em;
+    }
+input[type=checkbox]:checked ~ .shipping-address {
+    display: none;
+    }
+input[type=checkbox].news {
+    display: inline-block;
+    position: relative;
+    height: 20px;
+    width: 20px;
+    margin-right: 30px;
+    }
+#next-button {
+    background-color: rgb(16, 71, 25);
+    color: white;
+    float: right;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    width: 200px;
+    cursor: pointer;
+    }
+#back-button {
+    background-color: rgb(16, 71, 25);
+    color: white;
+    float: left;        
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    width: 200px;
+    cursor: pointer;
+    } 
+    #back-button a :hover {
+    transform: scale(1.2)
+    }  
+.product-id {
+    width: 70px;
+    height: 50px;    
+    vertical-align: -110%;         
+    }  
+.item-column {
+    display: inline-grid;          
+    width: 25%;
+    padding: 30px;          
+    }     
+.product-type {
+    width: 150px;
+    height: 20px;  
+    }
+#card-select {
+    padding: 12px;
+    width: 300px;      
+    }
+input.input-width {
+    width: 72px;
+    }
+    
+    
+           
+          
+
+
+
+      
