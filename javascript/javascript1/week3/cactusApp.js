@@ -1,4 +1,5 @@
 const activities = [];
+let sumOfDuration = 0;
 // const today = new Date()
 const automaticDate = new Date().toLocaleDateString('da-DK');
 function addActivity(date, activity, duration) {
@@ -16,12 +17,12 @@ addActivity('09/19/2019', 'youtube', 40);
 addActivity('09/19/2019', 'News Channels', 50);
 addActivity('', 'facebook', 40);
 addActivity('', 'slack', 15);
-console.log(activities);
+console.table(activities);
 
 // Show status for the activity
 
 function showStatus() {
-    let sumOfDuration = 0;
+    // let sumOfDuration = 0;
     if(activities.length == 0) {
         return 'Add some activities before calling showStatus.'
     } else { 
@@ -37,16 +38,16 @@ console.log(showStatus());
 
 
 function showMyLimit(limit) {
-    let sumOfDuration = 0;
-    for (let i = 0; i < activities.length; i++) {
-        sumOfDuration += activities[i].duration;
-    }  
+    
+    // for (let i = 0; i < activities.length; i++) {
+    //     sumOfDuration += activities[i].duration;
+    // }  
         if(sumOfDuration >= limit) {
     return `You have reached your limit, no more smartphoning for you!`;
     }
-    return `You have not reched your limits yet. `
+    return `You have spent ${sumOfDuration} min. You have not reched your limits yet. `
 }
-console.log(showMyLimit(100));
+console.log(showMyLimit(500));
 
 
 
