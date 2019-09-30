@@ -1,4 +1,3 @@
-// const command = '';
 const introArr = [];
 const todoArr = [];
 const eventArr = [];
