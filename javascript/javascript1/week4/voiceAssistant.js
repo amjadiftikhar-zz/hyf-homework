@@ -94,10 +94,7 @@ function getReply(command){
             output = num1 % num2;
         }
         return `${num1} ${operator} ${num2} = ${output}`;
-    }
-    else if (command.includes('what am i doing this week')) {
-        return `This week you have ${event.length} events.`;
-    }
+    }   
 }
 
 console.log(getReply('hello my name is Amjad')); 
