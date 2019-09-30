@@ -1,3 +1,4 @@
+// const command = '';
 const introArr = [];
 const todoArr = [];
 const eventArr = [];
@@ -20,7 +21,7 @@ function getReply(command){
 
     /*------------------Todo----------------------------*/
 
-    else if(command.includes('to my todo')){
+    else if(command.includes('to my todo')){        
         const commandArr = command.split(' ');
         const itemTodoArr = commandArr.slice(1, -3);
         const todoContent = itemTodoArr.join(' ');
@@ -45,22 +46,22 @@ function getReply(command){
     const year = today.getFullYear();
     const currentDate = new Date().toLocaleString('en-us', {month:'long'});    
     return `Today is ${todayDate}. of ${currentDate} ${year}`;
-
     } 
-/*------------------favourite dish----------------------------*/ 
+
+    /*------------------favourite dish----------------------------*/ 
+
     else if (command.includes('what is my favourite dish')) {
     return `your favourite dish is ${favDishArr[favDishArr.length - 1]}.`;
     }
     else if (command.includes('my favourite dish is')) {
     const commandArr = command.split(' ');
-    const favouriteDishName = commandArr[commandArr.length-1];    
-    favDishArr.push(favouriteDishName);
-    return favouriteDishName;
-  } 
+    const favDishName = commandArr[commandArr.length - 1];    
+    favDishArr.push(favDishName);
+    return favDishName;
+   } 
+    /*------------------timer----------------------------*/ 
 
-  /*------------------timer----------------------------*/ 
-
-  else if (command.includes('timer for 4 minutes')) {    
+    else if (command.includes('timer for 4 minutes')) {    
     const commandArr = command.split(' ');
     const timer = commandArr[commandArr.length-2];    
     const minInMilliSeconds = 0;
@@ -68,6 +69,35 @@ function getReply(command){
     console.log('Timer done')}, minInMilliSeconds);
     return `Timer set for ${timer} minutes.`;
   }
+
+  /*------------------Mathematic----------------------------*/
+
+  else if(command.includes('what is')) {
+    const commandArr = command.split(' ');
+    const num1 = Number(commandArr[commandArr.length - 3]);
+    const num2 = Number(commandArr[commandArr.length - 1]);
+    const operator = commandArr[commandArr.length - 2];
+    switch (operator) {
+        case "+":
+            output = num1 + num2;
+            break;
+        case "*":
+            output = num1 * num2;
+            break;
+        case "-":
+            output = num1 - num2;
+            break;
+        case "/":
+            output = num1 / num2;
+            break;
+        case "%":
+            output = num1 % num2;
+        }
+        return `${num1} ${operator} ${num2} = ${output}`;
+    }
+    else if (command.includes('what am i doing this week')) {
+        return `This week you have ${event.length} events.`;
+    }
 }
 
 console.log(getReply('hello my name is Amjad')); 
@@ -78,5 +108,10 @@ console.log(getReply('what is on my todo'));
 console.log(getReply('remove fishing from my todo'));
 console.log(getReply('what date is it today'));
 console.log(getReply('my favourite dish is spaghetti'));
-console.log(getReply('What is my favourite dish'));
+console.log(getReply('what is my favourite dish'));
+console.log(getReply('what is 3 + 3'));
+console.log(getReply('what is 3 * 4'));
+console.log(getReply('what is 9 / 3'));
+console.log(getReply('what is 8 % 3'));
 console.log(getReply('Set a timer for 4 minutes'));
+
