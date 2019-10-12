@@ -10,7 +10,7 @@ for (let i=0; i<numbers.length; i++){
 
 console.log("The doubled numbers are", newNumbers); // [2, 6]
 
-// map()
+// map() method
 
 const resultArr = [];
 const oddDoubleNum = numbers.map(oddNum => {     
@@ -22,7 +22,7 @@ const oddDoubleNum = numbers.map(oddNum => {
     }
 });
 
-console.log(resultArr); // [ 2, 0, 6, 0 ]
+console.log(resultArr); // [ 2, 6]
 
 //filter() method
 const requiredNumArr = [];
@@ -32,6 +32,6 @@ const filteredNum = numbers.filter(filterNum => {
     } 
 });
 
-console.log(requiredNumArr); //[ 1, 3 ]
+console.log(requiredNumArr); //[ 2, 6 ]
 
 
