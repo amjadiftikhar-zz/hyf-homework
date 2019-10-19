@@ -1,0 +1,27 @@
+
+#mainDiv {
+    /* border: 2px solid  darkolivegreen; */
+    background-color: azure;
+}
+h1 {
+    margin-left: 37%;
+}
+#inputKey {
+    margin-left: 40%;
+    
+}
+#btn {
+    margin-left: 40.5%;
+    margin-top: 3%;
+}
+
+#teamA {
+    float: left;
+    margin-left: 15%;
+    margin-top: 10%;   
+}
+#teamB{
+    float: right;
+    margin-right: 15%;
+    margin-top: 10%;
+}
