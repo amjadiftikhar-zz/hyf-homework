@@ -62,9 +62,6 @@ document.getElementById('callbackButtonB').addEventListener('click', function(){
 //5. Create a button with the text called "Log location". When this button is clicked the 
 // location (latitude, longitude) of the user should be logged out
 
-let latText = document.getElementById("latitude");
-let longText = document.getElementById("longitude");
-
 document.getElementById('logLocation').addEventListener("click", function() {
 
     navigator.geolocation.getCurrentPosition(function(position) {
