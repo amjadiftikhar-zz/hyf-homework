@@ -66,18 +66,11 @@ let latText = document.getElementById("latitude");
 let longText = document.getElementById("longitude");
 
 document.getElementById('logLocation').addEventListener("click", function() {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    let latPosition = position.coords.latitude;
-    let longPosition = position.coords.longitude;
 
-    latText.innerText = latPosition.toFixed(2);
-    longText.innerText = longPosition.toFixed(2);
-  });
+    navigator.geolocation.getCurrentPosition(function(position) {
+    console.log(`Latitude is: ${position.coords.latitude}, Langitude is: ${position.coords.longitude}`);
 });
-
-// navigator.geolocation.getCurrentPosition(function(position) {
-//     do_something(position.coords.latitude, position.coords.longitude);
-//   });
+});
 
 //7 =>  Create a function called runAfterDelay. It has two parameters: delay and callback. 
 // When called the function should wait delay seconds and then call the provided callback function. 
