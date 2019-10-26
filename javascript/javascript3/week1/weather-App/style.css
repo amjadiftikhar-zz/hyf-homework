@@ -1,0 +1,33 @@
+
+#headDiv {
+    text-align: center;
+    background-color: rgb(5, 5, 94);
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+}
+
+.info {
+    text-align: center;
+    color: rgb(8, 36, 114);
+}
+.inputDiv {
+    text-align: center;
+    margin: auto;
+}
+input[type='text']{
+    height: 30px;
+    font-size: 15px;
+}
+.btn {
+    /* height: 30px;
+    font-size: 15px; */
+    padding: 8px;
+    
+}
+
+#searchResult {   
+    margin-top: 10%;
+    margin-left: 5%;
+   
+}
