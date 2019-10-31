@@ -1,0 +1,76 @@
+
+body {
+    background-color: rgb(252, 160, 74);
+}
+.container {
+    max-width: 550px;
+    height: 200vh;
+    /* border: 1px solid black; */
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 5% 7%;
+    text-align: center;
+    padding: 100px;
+    background-color: rgb(9, 9, 66);
+    border-radius: 270%;
+}
+h1, h2, h3, span {
+    margin: 0px;
+    color: white;
+}
+h1 {
+    font-size: 20rem;
+}
+h2 {
+    font-size: 2rem;
+    margin-top: 3%;
+}
+h3 {
+    font-size: 1.5rem;
+}
+span {
+    font-size: 4rem;
+}
+.degrees {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+}
+.country {
+    margin-top: -2%;
+    color: white;
+}
+input {
+    padding: 6px;
+    border-radius: 6px;
+    width: 130px;
+    border: none;
+}
+input[type='text']{
+    font-size: 1rem;
+    background-color: rgb(241, 218, 187);
+}
+.btn {
+    padding: 8px;
+    border-radius: 6px;
+    background-color: rgb(241, 218, 187);
+    color: black; 
+    font-weight: bold;
+    border: none;
+}
+.wind {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+.humidity {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+.sunRise {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+.sunSet {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}

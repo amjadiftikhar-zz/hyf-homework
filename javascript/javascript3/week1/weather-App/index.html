@@ -3,36 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="main.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link type="text/css" href="style.css" rel="stylesheet">
-    <title>Weather Update</title>
+    <title>Document</title>
 </head>
-<body>
-    <div id="headDiv">
-        <h1>HYF Weather Update</h1>
-    </div>
-    <div class="container">        
-        <div class="info">
-            <h2>Type a city name</h2>
-        </div>
+<body>    
+    <div class="container">
         <div class="inputDiv">
             <input type="text"
                 name="searchQuery"
                 id="searchInput"
-                placeholder="Enter city">
-            <button type="submit" class="btn">Search City</button>               
+                placeholder="Enter city name">
+            <button type="submit" class="btn">Search</button>               
         </div>
-        <div id="searchResult">
-            <p class="country"></p>
-            <p class="cityName"></p>
-            <p class="temp"></p>
-            <p class="iconID"></p>
+        <h2 id="city"></h2>
+        <p class="country"></p>
+        <div class="section">
+            <p id="icon"></p>
+            <div class="degrees">
+                <h1 id="temp"></h1>
+                <span>&#176;</span>
+            </div>
+            <h3 id="desc"></h3>
+            <p class="wind"></p>
             <p class="humidity"></p>
-            <p class="cloudResult"></p>
-            <p class="desc"></p>
-            <p class="windSpeed"></p>
-            <p class="sunSet"></p>
-            <p class="sunRise"></p>               
+            <div class="detail">
+                <p class="sunRise"></p>
+                <p class="sunSet"></p>
+            </div>
         </div>
     </div>
     <script src="main.js"></script>
