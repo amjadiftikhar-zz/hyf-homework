@@ -31,12 +31,11 @@ function showWeatherDetail(data){
     const countryName = document.querySelector('.country');
     const temperature = document.querySelector('#temp');
     const icon = document.querySelector('#icon');
-    const desc = document.querySelector('#desc');
+    const desc = document.querySelector('.desc');
     const windSpeed = document.querySelector('.wind');
     const humidity = document.querySelector('.humidity');
     const sunRise = document.querySelector('.sunRise');
     const sunSet = document.querySelector('.sunSet');
-        
 
     name.innerHTML = data.name;
     countryName.innerHTML = data.sys.country;
@@ -44,14 +43,14 @@ function showWeatherDetail(data){
     desc.innerHTML = data.weather[0].description;
     iconGot = data.weather[0].icon;
     const iconUrl = `http://openweathermap.org/img/wn/${iconGot}@2x.png`;
-    icon.innerHTML = `<img src ="${iconUrl}" alt height = '250' width = '250'}>`;
+    icon.innerHTML = `<img src ="${iconUrl}" alt height = '25%' width = '25%'}>`;
     windSpeed.innerHTML = `Wind Speed: ${Math.floor(data.wind.speed)} m/s`;
     humidity.innerHTML = `Humidity: ${data.main.humidity} %`;
     let newSunrise = new Date((data.sys.sunrise) * 1000);
     sunRise.innerHTML = `Sunrise: ${formatTime(newSunrise)}`;
     let newSunset = new Date((data.sys.sunset) * 1000);
     sunSet.innerHTML = `Sunset: ${formatTime(newSunset)}`;
-    }
+}
 
 function formatTime(localTime) {
         return localTime.toLocaleTimeString();
@@ -61,11 +60,9 @@ window.addEventListener("load", () => {
    navigator.geolocation.getCurrentPosition(success, error); 
 
    function success(position){
-       let lat = position.coords.latitude;
-    //    console.log(lat)
+       let lat = position.coords.latitude;   
        let long = position.coords.longitude;
-    //    console.log(long)
-       getWeatherForCurrentLocation(lat, long)
+    getWeatherForCurrentLocation(lat, long)
    }
    function error(){
        console.log('error')
@@ -80,7 +77,6 @@ function getWeatherForCurrentLocation(lat, long){
     fetch(url).then(response => {
         return response.json();
     }).then(data => {
-        // console.log(data);
       showWeatherDetail(data);
     })
     .catch(err => {
