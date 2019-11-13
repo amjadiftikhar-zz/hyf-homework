@@ -1,22 +1,44 @@
 
 const button = document.querySelector('.btn');
+const searchQuery = document.querySelector('.search');
+const requiredNumber = document.querySelector('#requiredNumber');
+
+requiredNumber.addEventListener('keyup', enterpressed);
+function enterpressed(event){
+    if(requiredNumber.value === '' || requiredNumber.value === undefined || requiredNumber.value === null){
+        return alert('Add some city name')
+  } else if(event.key === 'Enter'){
+    giphySearch(); 
+    }
+}
+
+searchQuery.addEventListener('keyup', enterpressed);
+function enterpressed(event){
+    if(searchQuery.value === '' || searchQuery.value === undefined || searchQuery.value === null){
+        return alert('Add some city name')
+  } else if(event.key === 'Enter'){
+    giphySearch(); 
+    }
+}
 
 button.addEventListener('click', () => {
-    const input = document.querySelector('#searchInput'); 
-    const requiredResult = document.querySelector('#requiredNumber');    
-    const setLimit = requiredResult.value;     
-    const url = `http://api.giphy.com/v1/gifs/search?q=${input}`;
-    const api = `&api_key=8Z83DoNxjr9BUrHOrEt2xr4ZYFxodA6Z&limit=${setLimit}`;
-    // const query = `q=?`
-    const apiUrl = url + api; 
-    fetch(apiUrl)
-    .then(response => {
-        return response.json();
-    }).then(giphyData => {            
+    if(searchQuery.value === '' || searchQuery.value === undefined || searchQuery.value === null){
+        return alert('Enter something first')
+  } 
+giphySearch();
+})
+
+function giphySearch(){
+    const input = document.querySelector('#searchInput').value; 
+    const requiredResult = document.querySelector('#requiredNumber').value;
+    const url = `http://api.giphy.com/v1/gifs/search?q=${input}&api_key=8Z83DoNxjr9BUrHOrEt2xr4ZYFxodA6Z&limit=${requiredResult}`;    
+    fetch(url)
+    .then(response => response.json())
+    .then(giphyData => {            
         // console.log(giphyData);
         renderRetrievedData(giphyData.data);
     })
-})
+}
 
 function renderRetrievedData(items){
     const searchResult = document.querySelector('#searchResult');
@@ -26,7 +48,6 @@ function renderRetrievedData(items){
         searchItem.classList.add('results');
         searchItem.innerHTML =`<img src="${element.images.original.url}">`
         searchResult.appendChild(searchItem);
-        
     });
 }
 

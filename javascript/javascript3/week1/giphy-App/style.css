@@ -12,6 +12,12 @@
 input[type='text']{
     height: 30px;
     font-size: 15px;
+    border-radius: 5px;
+}
+#requiredNumber {
+    padding: 8px;
+    width: 6rem;
+    border-radius: 5px;
 }
 .btn {
     padding: 8px;
