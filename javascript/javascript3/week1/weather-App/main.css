@@ -28,10 +28,10 @@ span {
 	color: white;
 }
 h1 {
-	font-size: 10rem;
+	font-size: 13rem;
 }
 h2 {
-	font-size: 1.7rem;
+	font-size: 1.2rem;
 	margin-top: 25%;
 }
 span {
@@ -43,7 +43,7 @@ span {
 	justify-content: center;
 }
 .country {
-	margin-top: 15%;
+	margin-top: 8%;
 	color: white;
 }
 input {
@@ -54,6 +54,7 @@ input {
 }
 input[type="text"] {
 	font-size: 1rem;
+	text-align: center;
 	background-color: rgb(241, 218, 187);
 }
 .btn {
@@ -85,7 +86,9 @@ input[type="text"] {
 	color: white;
 	font-family: "Courier New", Courier, monospace;
 }
-
+p{
+	font-size: 0.9rem;
+}
 @media only screen and (min-width: 768px) {
 	.container {
 		max-width: 100%;
@@ -93,15 +96,13 @@ input[type="text"] {
 	}
 	input {
 		padding: 20px;
-		border-radius: 6px;
-		border: none;
 	}
 	.btn {
-		padding: 23px;
+		padding: 22px;
 		font-size: 1.3rem;
 	}
 	h1 {
-		font-size: 20rem;
+		font-size: 25rem;
 	}
 	h2 {
 		font-size: 3rem;
@@ -116,34 +117,32 @@ input[type="text"] {
 		font-size: 1.5rem;
 	}
 	p {
-		font-size: 1.7rem;
+		font-size: 1.6rem;
 	}
 }
 
 @media only screen and (min-width: 1000px) {
 	.container {
-		max-width: 50%;
-		height: 185vh;
+		max-width: 55%;
+		height: 200vh;
 	}
 	input {
-		padding: 10px;
-		border-radius: 6px;
-		border: none;
+		padding: 8px;
 	}
 	.btn {
-		padding: 12px;
+		padding: 10px;
 		font-size: 1.3rem;
 	}
 	h1 {
-		font-size: 20rem;
+		font-size: 25rem;
 	}
 	h2 {
-		font-size: 2rem;
+		font-size: 1.7rem;
 		margin-top: 20%;
 	}
 	.country {
-		margin-top: 3%;
-		font-size: 1.3rem;
+		margin-top: 2%;
+		font-size: 1rem;
 	}
 	span {
 		font-size: 4rem;
@@ -152,6 +151,6 @@ input[type="text"] {
 		font-size: 1.5rem;
 	}
 	p {
-		font-size: 1.7rem;
+		font-size: 1.3rem;
 	}
 }
