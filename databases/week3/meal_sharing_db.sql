@@ -22,7 +22,7 @@ number_of_guests INT UNSIGNED NOT NULL,
 meal_id INT UNSIGNED NOT NULL,
 created_date DATETIME NOT NULL DEFAULT NOW(),
 PRIMARY KEY (id),
-FOREIGN KEY (meal_id) REFERENCES meal (id) ON DELETE CASCADE ON UPDATE CASCADE
+FOREIGN KEY (meal_id) REFERENCES meal (id) ON DELETE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE review (
@@ -33,7 +33,7 @@ meal_id INT UNSIGNED NOT NULL,
 stars INT UNSIGNED NOT NULL,
 created_date DATETIME NOT NULL DEFAULT NOW(),
 PRIMARY KEY (id),
-FOREIGN KEY (meal_id) REFERENCES meal (id) ON DELETE CASCADE ON UPDATE CASCADE
+FOREIGN KEY (meal_id) REFERENCES meal (id) ON DELETE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- CREATING queries
@@ -171,12 +171,14 @@ WHERE price < 20;
 
 -- Get meals that still has available reservations
 
-SELECT meal.id AS meal_id, meal.title AS meal_title, reservation.number_of_guests, 
+SELECT meal.id AS meal_id, meal.title AS meal_title,  
+SUM(reservation.number_of_guests), 
 meal.max_reservations
 FROM meal 
 JOIN reservation ON reservation.meal_id = meal.id
 WHERE reservation.number_of_guests < meal.max_reservations
-GROUP BY reservation.meal_id;
+GROUP BY reservation.meal_id
+ORDER BY max_reservations DESC;
 
 -- Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
 
