@@ -28,65 +28,65 @@ app.get("/meals", (req, res, next) => {
 
 // Respond with the json for all the meals (including it's reviews) that are cheap (you define what a cheap meal is)
 
-// app.get("/meals", (req, res, next) => {
-// 	const cheapMeal = meals.filter(mealPrice => mealPrice.price < 100);
-// 	// console.log(cheapMeal);
-// 	res.json(cheapMeal);
-// 	next();
-// });
+app.get("/meals", (req, res, next) => {
+	const cheapMeal = meals.filter(mealPrice => mealPrice.price < 100);
+	// console.log(cheapMeal);
+	res.json(cheapMeal);
+	next();
+});
 
-// //Respond with the json for all the meals (including it's reviews) that can fit lots of people
+//Respond with the json for all the meals (including it's reviews) that can fit lots of people
 
-// app.get("/meals", (req, res, next) => {
-// 	const maxMeal = meals.filter(meal => meal.maxNumberOfGuests >= 10);
-// 	maxMeal.map(mealReview => {
-// 		mealReview.reviews = [];
-// 		for (i = 0; i < meals.length; i++) {
-// 			if (reviews[i].mealID === meals.id) {
-// 				mealReview.reviews.push(reviews[i]);
-// 			}
-// 		}
-// 	});
-// 	// console.log(maxMeal);
-// 	res.json(maxMeal);
-// 	next();
-// });
+app.get("/meals", (req, res, next) => {
+	const maxMeal = meals.filter(meal => meal.maxNumberOfGuests >= 10);
+	maxMeal.map(mealReview => {
+		mealReview.reviews = [];
+		for (i = 0; i < meals.length; i++) {
+			if (reviews[i].mealID === meals.id) {
+				mealReview.reviews.push(reviews[i]);
+			}
+		}
+	});
+	// console.log(maxMeal);
+	res.json(maxMeal);
+	next();
+});
 
-// //Respond with the json for a random meal (including it's reviews)
+//Respond with the json for a random meal (including it's reviews)
 
-// app.get("/meals", (req, res, next) => {
-// 	meals.map(meal => {
-// 		meal.reviews = [];
-// 		for (i = 0; i < meals.length; i++) {
-// 			if (reviews[i].mealID === meals.id) {
-// 				meal.reviews.push(reviews[i]);
-// 			}
-// 		}
-// 	});
-// 	const random = Math.floor(Math.random() * meals.length);
-// 	const randomMeal = meals.filter(mealReview => mealReview.id === random);
-// 	// console.log(randomMeal);
-// 	res.json(randomMeal);
-// 	next();
-// });
+app.get("/meals", (req, res, next) => {
+	meals.map(meal => {
+		meal.reviews = [];
+		for (i = 0; i < meals.length; i++) {
+			if (reviews[i].mealID === meals.id) {
+				meal.reviews.push(reviews[i]);
+			}
+		}
+	});
+	const random = Math.floor(Math.random() * meals.length);
+	const randomMeal = meals.filter(mealReview => mealReview.id === random);
+	// console.log(randomMeal);
+	res.json(randomMeal);
+	next();
+});
 
-// //Respond with the json for all reservations
+//Respond with the json for all reservations
 
-// app.get("/reservations", (req, res, next) => {
-// 	res.json(reservations);
-// 	// console.log(reservations);
-// 	next();
-// });
+app.get("/reservations", (req, res, next) => {
+	res.json(reservations);
+	// console.log(reservations);
+	next();
+});
 
-// //Respond with the json for a random reservation
+//Respond with the json for a random reservation
 
-// app.get("/reservations", (req, res, next) => {
-// 	const randomReservations =
-// 		reservations[Math.floor(Math.random() * reservations.length)];
-// 	res.json(randomReservations);
-// 	// console.log(randomReservations);
-// 	next();
-// });
+app.get("/reservations", (req, res, next) => {
+	const randomReservations =
+		reservations[Math.floor(Math.random() * reservations.length)];
+	res.json(randomReservations);
+	// console.log(randomReservations);
+	next();
+});
 
 app.listen(3000, () => {
 	console.log("server started on port 3000");
