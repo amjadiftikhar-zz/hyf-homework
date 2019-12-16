@@ -10,7 +10,7 @@
     {
         "id": 2,
         "title": "Italian food",
-        "maxNumberOfGuests": 7,
+        "maxNumberOfGuests": 15,
         "description": "A nice night out eating delicious Italian food",
         "createdAt": "2019/12/10 14:34",
         "price": 100
