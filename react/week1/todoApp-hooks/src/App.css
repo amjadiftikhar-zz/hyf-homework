@@ -1,0 +1,68 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-color: aquamarine;
+}
+#todoDiv {
+	background-color: brown;
+	min-height: 45em;
+	width: 30em;
+	margin: 15px auto;
+	border-radius: 20px;
+}
+/* h1{
+  text-align: center;
+  background-color: black;
+  color: white;
+} */
+#todoForm input {
+	background-color: rgb(231, 163, 73);
+	border: 0;
+	margin-top: 10px;
+	width: 300px;
+	height: 50px;
+	padding: 0 20px;
+	margin: 10px;
+	font-size: 16px;
+	border-radius: 10px;
+}
+#todoForm input::placeholder {
+	color: white;
+}
+#todoForm input:focus,
+#todoForm button:focus {
+	outline: none;
+}
+#todoForm button {
+	height: 50px;
+	width: 70px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	font-weight: bolder;
+}
+.listItems {
+	color: white;
+	width: 400px;
+	height: 50px;
+	background-color: rgb(22, 22, 17);
+	margin: 20px auto;
+	border-radius: 5px;
+}
+.listItems p {
+	padding: 10px;
+	position: relative;
+}
+.listItems p button {
+	position: absolute;
+	right: 10px;
+	background-color: rgb(247, 243, 61);
+	color: red;
+	align-content: center;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 0 5px;
+	font-size: 20px;
+}
