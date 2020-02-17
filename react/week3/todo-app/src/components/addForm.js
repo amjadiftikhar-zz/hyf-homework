@@ -10,7 +10,10 @@ function AddForm({ addNewTodo }) {
 		event.preventDefault();
 		if (!state) return;
 		addNewTodo(state);
-		setState("");
+		setState({
+			description: "",
+			deadline: ""
+		});
 	};
 
 	return (
@@ -25,7 +28,6 @@ function AddForm({ addNewTodo }) {
 
 			<input
 				name="deadline"
-				type="text"
 				type="datetime-local"
 				value={state.deadline}
 				onChange={e => setState({ ...state, deadline: e.target.value })}

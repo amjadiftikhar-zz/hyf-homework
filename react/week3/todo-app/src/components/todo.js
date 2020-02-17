@@ -1,13 +1,14 @@
-import React, { useState, createRef } from "react";
+import React, { useState } from "react";
 
 function Todo({ element, id, removeTodo, handleCheckBox, updateTodo }) {
+	
 	const [isEdited, setIsEdited] = useState(false);
 
 	const [newState, setNewState] = useState({
 		newDescription: element.description,
 		newDeadline: element.deadline
 	});
-
+	console.log("hello render");
 	return (
 		<div
 			className="todo"
@@ -25,7 +26,7 @@ function Todo({ element, id, removeTodo, handleCheckBox, updateTodo }) {
 								value={newState.newDescription}
 							/>
 							<input
-								type="text"
+								type="datetime-local"
 								onChange={e =>
 									setNewState({ ...newState, newDeadline: e.target.value })
 								}
@@ -34,7 +35,7 @@ function Todo({ element, id, removeTodo, handleCheckBox, updateTodo }) {
 						</>
 					) : (
 						<>
-							{element.description},{element.deadline}
+							{element.description} | {element.deadline}
 						</>
 					)}
 					<input
@@ -56,9 +57,7 @@ function Todo({ element, id, removeTodo, handleCheckBox, updateTodo }) {
 							update
 						</button>
 					) : (
-						<button onClick={() => setIsEdited(true)}>
-							edit
-						</button>
+						<button onClick={() => setIsEdited(true)}>edit</button>
 					)}
 
 					<button id="remove" onClick={() => removeTodo(id)}>
@@ -70,4 +69,13 @@ function Todo({ element, id, removeTodo, handleCheckBox, updateTodo }) {
 	);
 }
 
-export default Todo;
+function areEqual(prevProps, nextProps) {
+	return (
+		prevProps.element === nextProps.element &&
+		prevProps.isCompleted === nextProps.isCompleted
+	);
+}
+
+export default React.memo(Todo, areEqual);
+
+

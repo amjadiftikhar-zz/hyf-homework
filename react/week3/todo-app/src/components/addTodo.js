@@ -16,8 +16,8 @@ function AddTodo() {
 		getData();
 	}, []);
 
-	const addNewTodo = description => {
-		const newTodos = [...todos, { ...description, isCompleted: false }];
+	const addNewTodo = todo => {
+		const newTodos = [...todos, { ...todo, isCompleted: false }];
 		setTodos(newTodos);
 		console.log("This is from newTodos", newTodos);
 	};
@@ -35,19 +35,19 @@ function AddTodo() {
 			}
 		});
 		setTodos(updatedTodos);
-		console.log("updated Todos", updatedTodos);
 	};
 
 	const removeTodo = id => {
-		console.log(id);
-		const newFilteredTodos = [...todos];
-		newFilteredTodos.splice(id, 1);
-		setTodos(newFilteredTodos);
+		setTodos(todos.filter(element => element.id !== id));
 	};
 
 	const handleCheckBox = id => {
-		const newTodos = [...todos];
-		newTodos[id].isCompleted = !newTodos[id].isCompleted;
+		const newTodos = todos.map(todosItem => {
+			if (todosItem.id === id) {
+				return { ...todosItem, isCompleted: !todosItem.isCompleted };
+			}
+			return todosItem;
+		});
 		setTodos(newTodos);
 	};
 
@@ -60,7 +60,7 @@ function AddTodo() {
 					{todos.map((element, id) => (
 						<Todo
 							key={id}
-							id={id}
+							id={element.id}
 							element={element}
 							handleCheckBox={handleCheckBox}
 							removeTodo={removeTodo}
