@@ -3,16 +3,20 @@
 var mysql = require("mysql");
 
 require("dotenv").config();
+const {MYSQL_URL} = process.env;
 
-var pool = mysql.createConnection({
-	connectionLimit: 10,
-	host: process.env.DB_HOST,
-	user: process.env.DB_USER,
-	password: process.env.DB_PASSWORD,
-	database: process.env.DB_DATABASE,
-	port: process.env.DB_PORT,
-	multipleStatements: true
-});
+var pool = mysql.createConnection(MYSQL_URL);
+
+
+// var pool = mysql.createConnection({
+// 	connectionLimit: 10,
+// 	host: process.env.DB_HOST,
+// 	user: process.env.DB_USER,
+// 	password: process.env.DB_PASSWORD,
+// 	database: process.env.DB_DATABASE,
+// 	port: process.env.DB_PORT,
+// 	multipleStatements: true
+// });
 
 // pool.getConnection((err, connection) => {
 // 	if (err) {

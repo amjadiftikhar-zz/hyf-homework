@@ -20,7 +20,7 @@ router.get("/", (request, response) => {
 	const { createdAfter } = request.query;
 	const { limit } = request.query;
 	if (maxPrice) {
-		pool.query(`SELECT * FROM meal WHERE price >= ${maxPrice}`, function(
+		pool.query(`SELECT * FROM meal WHERE price <= ${maxPrice}`, function(
 			error,
 			results,
 			fields
@@ -50,7 +50,9 @@ router.get("/", (request, response) => {
 			results,
 			fields
 		) {
-			response.json(results);
+			if (error) {
+				console.log("error", error);
+			} else response.json(results);
 			// console.log(results);
 		});
 	}
@@ -58,7 +60,9 @@ router.get("/", (request, response) => {
 		pool.query(
 			`SELECT * FROM meal WHERE created_date >= '${createdAfter}'`,
 			function(error, results, fields) {
-				response.json(results);
+				if (error) {
+					console.log("error", error);
+				} else response.json(results);
 				// console.log(results);
 			}
 		);
@@ -68,7 +72,9 @@ router.get("/", (request, response) => {
 			`SELECT meal.id, meal.title, meal.description, meal.created_date, meal.location
       FROM meal WHERE meal.price >= 100 ORDER BY id ASC LIMIT ${limit}`,
 			function(error, results, fields) {
-				response.json(results);
+				if (error) {
+					console.log("error", error);
+				} else response.json(results);
 				// console.log(results);
 			}
 		);
@@ -78,9 +84,9 @@ router.get("/", (request, response) => {
 		pool.query("SELECT * FROM meal", function(error, results, fields) {
 			if (error) {
 				return response.send(error);
-			}
-			response.json(results);
-			// console.log(results);
+			} else response.json(results);
+			//
+			console.log(results);
 		});
 	}
 });
@@ -93,20 +99,26 @@ router.get("/:id", (request, response) => {
 		results,
 		fields
 	) {
-		response.json(results);
+		if (error) {
+			console.log("error", error);
+		} else response.json(results);
 		// console.log(results);
 	});
 });
 
 // Adds a new meal
+
 router.post("/", (request, response) => {
-	const newMeal = request.body;
-	pool.query(`INSERT INTO meal SET ?`, newMeal, function(
+	const meal = request.body;
+	console.log("Meal", meal);
+	pool.query("INSERT INTO meal SET ?", meal, function(
 		error,
 		results,
 		fields
 	) {
-		response.json(results);
+		if (error) {
+			console.log("error", error);
+		} else response.json(results);
 		// console.log(results);
 	});
 });

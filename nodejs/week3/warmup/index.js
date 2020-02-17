@@ -19,6 +19,6 @@ const bodyHomeRoute = require("./routes/bodyQueryRoutes");
 
 app.use("/calculator", homeRoute);
 app.use("/calculator", calculatorHomeRoute);
-app.use("/calculate", bodyHomeRoute);
+app.use("/calculator", bodyHomeRoute);
 
 app.listen(port, () => console.log(`server started at port ${port}`));
