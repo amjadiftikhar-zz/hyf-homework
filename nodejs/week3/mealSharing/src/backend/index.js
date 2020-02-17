@@ -3,43 +3,6 @@ const app = express();
 const pool = require("./database");
 const router = express.Router();
 
-// adding security in the code
-// const jwt = require("jsonwebtoken");
-// const PRIVATE_KEY = "MY_RANDOM_PRIVATE_KEY";
-
-// router.post("/auth", (request, response) => {
-// 	const {body} = request;
-// 	console.log("Meal", body);
-// 	const {password, username} = body
-// 	// pool.query("INSERT INTO meal SET ?", newMeal, function(
-// 	// 	error,
-// 	// 	results,
-// 	// 	fields
-// 	// ) {
-// 	// 	if (error) {
-// 	// 		console.log("error", error);
-// 	// 	}else
-// 	// 	response.json(results);
-// 	// 	// console.log(results);
-// 	// });
-
-// 	jwt.sign(
-// 		{
-// 			username
-// 		},
-// 		PRIVATE_KEY,
-// 		{ expiresIn: "1h" },
-// 		(err, token) => {
-// 			if (err) {
-// 				console.log(err);
-// 			}
-// 			if (token) {
-// 				console.log(token);
-// 			}
-// 		}
-// 	);
-// });
-
 const mealsRouter = require("./api/meals");
 const reservationsRouter = require("./api/reservations");
 const reviewsRouter = require("./api/reviews");
