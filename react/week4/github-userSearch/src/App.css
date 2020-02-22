@@ -1,0 +1,15 @@
+.App {
+	text-align: center;
+}
+
+form input {
+	border-radius: 5px;
+	padding: 10px;
+	width: 200px;
+}
+
+.githubUsers {
+	display: grid;
+	display: inline;
+  padding: 50px;
+}
