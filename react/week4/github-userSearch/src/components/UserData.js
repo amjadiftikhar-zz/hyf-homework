@@ -16,7 +16,6 @@ function UserData() {
 				.then(data => data.json())
 				.then(data => {
 					setUsers(data.items);
-					console.log("state users from Api here ", data.items);
 				});
 			setLoading(false);
 		}

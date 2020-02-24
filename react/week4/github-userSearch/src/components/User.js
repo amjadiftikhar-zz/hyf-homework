@@ -3,7 +3,6 @@ import UserDetails from "./UserDetails";
 
 function User({ user }) {
 	const [userState, setUserState] = useState(false);
-
 	const showDetails = e => {
 		e.preventDefault();
 		setUserState(!userState);

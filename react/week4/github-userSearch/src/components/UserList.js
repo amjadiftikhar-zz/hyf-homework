@@ -2,7 +2,7 @@ import React from "react";
 import User from "./User";
 
 function UserList({ users }) {
-	console.log("users data in userlist", users);
+	// console.log("usersData props from parent in userlist", users);
 	return (
 		<div>
 			<ul>

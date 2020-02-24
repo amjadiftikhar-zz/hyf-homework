@@ -5,11 +5,12 @@ function UserDetails({ user }) {
 	const [loading, setLoading] = useState(true);
 
 	const fetchDetails = async login => {
+		// console.log("this is from login param", user.login)
 		const url = `https://api.github.com/users/${login}`;
-		const details = await fetch(url)
+		const urlData = await fetch(url)
 			.then(data => data.json())
 			.catch(error => console.log(error));
-		setDetails(details);
+		setDetails(urlData);
 		setLoading(false);
 	};
 
