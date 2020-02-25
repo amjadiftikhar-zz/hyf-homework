@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { UserContext } from "./../App";
 
-function UserSearch({ handleSearch }) {
-	const [searchUser, setSearchUser] = useState("");
-	handleSearch(searchUser);
+function UserSearch() {
+	const { search, setSearch } = useContext(UserContext);
+
 	return (
-		<div>
-			<form>
+		<>
+			<form className="userInput">
 				<input
-					type="text"
-					value={searchUser}
-					onChange={e => setSearchUser(e.target.value)}
+					type="search"
+					placeholder="enter user name!"
+					value={search}
+					onChange={e => setSearch(e.target.value)}
 				/>
 			</form>
-		</div>
+		</>
 	);
 }
 

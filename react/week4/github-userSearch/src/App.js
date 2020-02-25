@@ -1,15 +1,42 @@
-import React, { useContext } from "react";
-import UserData from "./components/UserData";
-import Header from "./components/Header"
+import React, { useState, useEffect, createContext } from "react";
+import Header from "./components/Header";
+import UserSearch from "./components/Form";
+import UserList from "./components/UserList";
 import "./App.css";
 
+const UserContext = createContext();
+
 function App() {
+	const [search, setSearch] = useState("");
+	const [users, setUsers] = useState([]);
+	const [loading, setLoading] = useState(false);
+
+	useEffect(() => {
+		const url = `https://api.github.com/search/users?`;
+		const fetchUser = async () => {
+			const searchUrl = `${url}q=${search}`;
+			if (search) {
+				setLoading(true);
+				await fetch(searchUrl)
+					.then(data => data.json())
+					.then(data => {
+						setUsers(data.items);
+					});
+				setLoading(false);
+			}
+		};
+		fetchUser();
+	}, [search]);
+
 	return (
 		<div className="App">
-			<Header/>
-			<UserData />
+			<Header />
+			<UserContext.Provider value={{ users, search, setSearch }}>
+				<UserSearch />
+				{loading ? <p>...fetching data</p> : <UserList users={users} />}
+			</UserContext.Provider>
 		</div>
 	);
 }
 
-export default App;
+export { App, UserContext };

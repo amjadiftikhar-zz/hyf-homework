@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import User from "./User";
+import { UserContext } from "./../App";
 
-function UserList({ users }) {
-	// console.log("usersData props from parent in userlist", users);
+function UserList() {
+	const { users } = useContext(UserContext);
 	return (
-		<div>
+		<div className="userList">
 			<ul>
 				{users.length > 0 ? (
 					users.map(user => {
-						return <User key={user.id} user={user} />;
+						return (
+							<li className="items">
+								<User key={user.id} user={user} />
+							</li>
+						);
 					})
 				) : (
 					<p>no user</p>
