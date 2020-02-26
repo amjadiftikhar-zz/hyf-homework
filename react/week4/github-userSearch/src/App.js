@@ -12,17 +12,18 @@ function App() {
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-		const url = `https://api.github.com/search/users?`;
+		const URL = `https://api.github.com/search/users?`;
 		const fetchUser = async () => {
-			const searchUrl = `${url}q=${search}`;
+			const searchUrl = `${URL}q=${search}`;
 			if (search) {
 				setLoading(true);
 				await fetch(searchUrl)
 					.then(data => data.json())
 					.then(data => {
 						setUsers(data.items);
-					});
-				setLoading(false);
+					})
+					.catch(error => console.log(error))
+					.finally(() => setLoading(false));
 			}
 		};
 		fetchUser();

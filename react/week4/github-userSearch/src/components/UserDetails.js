@@ -5,13 +5,13 @@ function UserDetails({ user }) {
 	const [loading, setLoading] = useState(false);
 
 	const fetchDetails = async login => {
-		const url = `https://api.github.com/users/${login}`;
+		const URL = `https://api.github.com/users/${login}`;
 		setLoading(true);
-		const urlData = await fetch(url)
-			.then(data => data.json())
-			.catch(error => console.log(error));
-		setDetails(urlData);
-		setLoading(false);
+		await fetch(URL)
+			.then(response => response.json())
+			.then(data => setDetails(data))
+			.catch(error => console.log(error))
+			.finally(() => setLoading(false));
 	};
 
 	useEffect(() => {

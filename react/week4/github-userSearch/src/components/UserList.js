@@ -10,7 +10,7 @@ function UserList() {
 				{users.length > 0 ? (
 					users.map(user => {
 						return (
-							<li className="items">
+							<li key={user.id} className="items">
 								<User key={user.id} user={user} />
 							</li>
 						);
