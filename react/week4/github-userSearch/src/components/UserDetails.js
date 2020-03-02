@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 
 function UserDetails({ user }) {
-	const [details, setDetails] = useState("");
+	// console.log("user as props", user);
+	const [details, setDetails] = useState([]);
 	const [loading, setLoading] = useState(false);
 
 	const fetchDetails = async login => {
+		// console.log("information about user", user.login);
 		const URL = `https://api.github.com/users/${login}`;
 		setLoading(true);
 		await fetch(URL)
 			.then(response => response.json())
-			.then(data => setDetails(data))
+			.then(data => {
+				// console.log("api data of specific user", data);
+				setDetails(data);
+			})
 			.catch(error => console.log(error))
 			.finally(() => setLoading(false));
 	};
@@ -18,7 +23,7 @@ function UserDetails({ user }) {
 		fetchDetails(user.login);
 	}, [user.login]);
 
-	if (loading) return <></>;
+	if (loading) return <>...loading</>;
 	return (
 		<div className="userDetails">
 			{details ? (

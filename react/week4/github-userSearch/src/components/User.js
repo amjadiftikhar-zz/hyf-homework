@@ -3,6 +3,7 @@ import UserDetails from "./UserDetails";
 
 function User({ user }) {
 	const [showUserDetails, setShowUserDetails] = useState(false);
+
 	const showDetails = e => {
 		e.preventDefault();
 		setShowUserDetails(!showUserDetails);
@@ -10,9 +11,9 @@ function User({ user }) {
 
 	return (
 		<div className="userList">
-			<a href={user.url} onClick={e => showDetails(e)}>
+			<a href={user.url} onClick={showDetails}>
 				<img src={user.avatar_url} />
-				<span>{user.login}</span>
+				{user.login}
 			</a>
 			{showUserDetails && <UserDetails user={user} />}
 		</div>
